@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Alarm UI</title>
+	<link href='http://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+	<!-- https://dribbble.com/shots/1640866-Alarm-Material-UI?list=searches&tag=material_design&offset=11 -->
+	<!-- I'm not following the depth consideration through code; I'm just showing it with absolute positioning and shadows -->
+	<div id="screen">
+		<div id="status-bar">
+			<!-- I'm ignoring the options for now -->
+		</div>
+		<div id="background">
+			
+			<div id="date">
+				<div class="arrow arrow-left">
+					<img src="images/ic_arrow_back_white_18dp.png">
+				</div>
+				<div id="date-center">
+					<div id="day" class="light">18</div>
+					<div id="mon-yr" class="gtext-active">July 2014</div>
+				</div>
+				<div class="arrow arrow-right">
+					<img src="images/ic_arrow_forward_white_18dp.png"></div>
+			</div>
+		</div>
+
+		<div id="alarms" class="content-card">
+			<div class="light daybar">Monday</div>
+
+			<div class="alarm">
+				<div class="a-status">
+					<!-- I don't like how small his is -->
+					<img src="images/ic_notifications_grey600_18dp.png">
+				</div>
+				<div class="a-info not-last">
+					<div class="a-time gtext-active">06:30</div>
+					<div class="a-days">
+						<!-- <ul> -->
+							<span class="btext-active">SU</span>
+							<span class="text-inactive">MO</span> 
+							<span class="btext-active">TU</span>
+							<span class="btext-active">WE</span>
+							<span class="text-inactive">TH</span>
+							<span class="btext-active">FR</span>
+							<span class="btext-active">SA</span>
+						<!-- </ul> -->
+					</div>
+					<div class="a-slider">
+						<div class="slider-bar"></div>
+						<div class="slider-ball bfill-active alarm-on"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="alarm">
+				<div class="a-status">
+					<!-- I don't like how small his is -->
+					<img src="images/ic_notifications_none_grey600_18dp.png">
+				</div>
+				<div class="a-info not-last">
+					<div class="a-time text-inactive">09:30</div>
+					<div class="a-days">
+						<!-- <ul> -->
+							<span class="text-inactive">SU</span>
+							<span class="text-inactive">MO</span> 
+							<span class="text-inactive">TU</span>
+							<span class="btext-active">WE</span>
+							<span class="text-inactive">TH</span>
+							<span class="text-inactive">FR</span>
+							<span class="text-inactive">SA</span>
+						<!-- </ul> -->
+					</div>
+					<div class="a-slider">
+						<div class="slider-bar"></div>
+						<div class="slider-ball bfill-inactive alarm-off"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="alarm">
+				<div class="a-status">
+					<!-- I don't like how small his is -->
+					<img src="images/ic_notifications_grey600_18dp.png">
+				</div>
+				<div class="a-info">
+					<div class="a-time gtext-active">15:30</div>
+					<div class="a-days">
+						<!-- <ul> -->
+							<span class="btext-active">SU</span>
+							<span class="text-inactive">MO</span> 
+							<span class="text-inactive">TU</span>
+							<span class="text-inactive">WE</span>
+							<span class="text-inactive">TH</span>
+							<span class="text-inactive">FR</span>
+							<span class="text-inactive">SA</span>
+						<!-- </ul> -->
+					</div>
+					<div class="a-slider">
+						<div class="slider-bar"></div>
+						<div class="slider-ball bfill-active alarm-on"></div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div id="details" class="content-card">
+			<div class="daybar" class="light">Monday</div>
+		</div>
+
+		<div id="floating-button">
+			<img src="images/ic_add_black_18dp.png">
+		</div>
+
+		
+	</div>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="index.js"></script>
+</body>
+</html>
+
+<!-- 
+	
+	To do
+
+	o Make an Android status bar? (not like his)
+	
+	o Make details screen
+	o Hard JS animations:
+	 - button press changes something and expands
+	 - then covers card in yellow while existing card splits and exits
+	o After I'm completely done, experiment with doing an animation between background images where the alarm icon is. I might be able to fade everything about an alarm when the slider is touched
+	
+
+
+
+	Next project ideas:
+	o HTML/CSS versions of Android and iPhone (leave div for screen)
+	o Perspective mobile app mockups
+	 - See if I can skew an entire html/css mockup to make that happen
+
+
+-->

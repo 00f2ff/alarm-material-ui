@@ -1,0 +1,270 @@
+/* for shadows:
+ * https://medium.com/@Florian/freebie-google-material-design-shadow-helper-2a0501295a2d
+ */
+
+body {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	background-color: #5CFEBD;
+	-webkit-user-select: none;
+}
+
+#screen {
+	width: 200px;
+	margin: 50px auto;
+	border-radius: 2px;
+	box-shadow: 0px 5px 6px rgba(0,0,0,0.5);
+	position: relative;
+}
+
+#background { /* cyan palette */
+	/*height: calc(18px + (56px + 72px) + 10px);*/
+	height: 132px;
+	background-color: #00bcd4;
+	box-shadow: inherit;
+	position: relative;
+	overflow: hidden;
+}
+
+#background #date {
+	padding-top: 18px;
+	padding-bottom: 18px;
+	float: left;
+	
+}
+
+#background #date .arrow {
+	margin-top: 32px;
+	float: left;
+	cursor: pointer;
+	/*user-select: none;*/
+}
+
+#background #date .arrow.arrow-left {
+	padding-left: 16px;
+}
+
+#background #date .arrow.arrow-right {
+	float: left;
+}
+
+/*** This code courtesy of http://thecodeplayer.com/walkthrough/ripple-click-effect-google-material-design */
+/*.ink styles - the elements which will create the ripple effect. 
+The size and position of these elements will be set by the JS code. 
+Initially these elements will be scaled down to 0% and later animated 
+to large fading circles on user click.*/
+.ink {
+	display: block; 
+	position: absolute;
+	/*background: hsl(180, 40%, 80%);*/
+	border-radius: 100%;
+	/* start as a point */
+	-webkit-transform: scale(0);
+}
+/* animation effect */
+.ink.animate {
+	-webkit-animation: ripple 0.65s linear;
+}
+@-webkit-keyframes ripple {
+	/* scale to 250% to cover entire space and fade out */
+	100% {
+		opacity: 0;
+		-webkit-transform: scale(2.5);
+	}
+}
+
+
+
+#background #date #date-center {
+	float: left;
+	text-align: center;
+	margin: 0 calc((200px - 34px * 2 - 49px) / 2);
+}
+
+#background #date #date-center #day {
+	font-size: 45px;
+	font-weight: 100;
+
+}
+
+#background #date #date-center #mon-yr {
+	font-size: 12px;
+	font-weight: 400;
+	margin-top: 6px;
+}
+
+.content-card {
+	border-radius: 0 0 2px 2px;
+	/* calc because details view is same size */
+	/*height: calc(56px * 3 + 24px);*/
+	height: 192px;
+	box-shadow: inherit;
+}
+
+#alarms {
+	background-color: #F4FDFE;
+	position: relative;
+}
+
+.light {
+	color: #F4FDFE;
+}
+
+.gtext-active {
+	color: #5C5D5D;
+}
+
+.text-inactive { /* same for btext */
+	color: #A3B7BB;
+}
+
+.btext-active {
+	color: #2096f4; /* a special blue; pulled from PS */
+}
+
+.a-days span {
+	/*display: inline;*/
+	font-size: 7px;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.daybar {
+	height: 24px;
+	background-color: #5C5D5D;
+	font-size: 8px; /* this is smaller than it should be */
+	text-transform: uppercase;
+	line-height: 24px;
+	padding-left: 16px;
+	/* I think he defined his own shadow params */
+	box-shadow: 0px -1px 0px 0px rgba(0,0,0,0.6);
+	font-weight: 700;
+}
+
+.a-status {
+	float: left;
+	padding-left: 16px;
+	/*padding-top: calc(56px / 2 - 16px / 2);*/
+	padding-top: 18px;
+	
+}
+
+.a-info {
+	float: left;
+	width: 134px;
+	margin-left: 16px;
+	padding-top: 6px;
+	padding-bottom: 4px;
+	
+}
+
+.a-info.not-last {
+	border-bottom: 1px solid #A3B7BB;
+}
+
+.a-info .a-time {
+	/* he makes a text manipulation that I'm not sure if I can */
+	font-size: 24px;
+	font-weight: 400;
+	margin-left: -2px;
+}
+
+.a-info .a-days {
+	margin-top: -8px;
+}
+
+.a-info .a-slider {
+	position: relative;
+	left: calc(92px + 22px);
+	top: -24px;
+	width: 20px;
+}
+
+.a-info .a-slider .slider-bar {
+	border-bottom: 1px solid #A3B7BB;
+}
+
+.bfill-active {
+	height: 10px;
+	width: 10px;
+	background-color: #2096f4;
+	left: 9px;
+	
+}
+
+.bfill-inactive {
+	height: 8px;
+	width: 8px;
+	background-color: #F4FDFE;
+	border: 1px solid #5C5D5D;
+	left: 1px;
+}
+
+.a-info .a-slider .slider-ball {
+	border-radius: 50%;
+	/* leave 1 px before end of bar */
+	position: absolute;
+	top: -5px;
+}
+
+.alarm-off {
+	-webkit-animation: slideleft 0.2s linear forwards;
+}
+@-webkit-keyframes slideleft {
+	/*50% {
+		-webkit-transform: translateX(-9px);
+	}*/
+	from {left: 9px;}
+	to {left: 1px;}
+}
+
+.alarm-on {
+	-webkit-animation: slideright 0.2s linear forwards;
+}
+@-webkit-keyframes slideright {
+	/*50% {
+		-webkit-transform: translateX(-9px);
+	}*/
+	from {left: 1px;}
+	to {left: 9px;}
+}
+
+.a-info.alarm-last {
+	border: none;
+}
+
+#floating-button {
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+	background-color: #ffeb3b;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);	
+	position: relative;
+	z-index: 99;
+	margin-top: calc(-1*(56px*3 + 12px + 40px - 8px));
+	margin-left: calc(200px - 40px - 16px);
+	overflow: hidden;
+}
+
+#floating-button img {
+	position: relative;
+	/*top: calc(40px / 2 - 18px / 2);*/
+	top: 11px;
+	/*left: calc(40px / 2 - 18px / 2);*/
+	left: 11px;
+	/*cursor: pointer;*/
+}
+
+#status-bar {
+	height: 24px;
+	background-color: #0097a7;
+	border-radius: 2px 2px 0 0;
+	box-shadow: inherit;
+	position: relative;
+}
+
+#details {
+	display: none;
+}
+
+
